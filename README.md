@@ -27,5 +27,5 @@ $ npm test
    [Jasmine]: <https://jasmine.github.io/>
    [Karma]: <https://karma-runner.github.io/1.0/index.html>
    [AngularJS]: <http://angularjs.org>
-   
+   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
 
