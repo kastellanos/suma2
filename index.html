@@ -54,13 +54,13 @@
 	<form name="sumForm">
 	<div class="form-group">
 	    <label for="firstNumber">Número 1:</label>
-		<input name="firstNumber" ng-model="firstNumber" id="firstNumber" class="form-control" required autofocus="true" placeholder="zero" pattern="[a-z]+">
+		<input name="firstNumber" ng-model="firstNumber" id="firstNumber" class="form-control" required autofocus="true" placeholder="zero" pattern="[a-z\s]+">
 		<span ng-show="sumForm.firstNumber.$touched && sumForm.firstNumber.$invalid">Debes ingresar  un número.</span>
 		<div ng-if="number1_invalid">{{ number1_invalid }}</div>
   	</div>
 	<div class="form-group">
 	    <label for="secondNumber">Número 2:</label>
-		<input name="secondNumber" ng-model="secondNumber" id="secondNumber" class="form-control" required placeholder="zero" pattern="[a-z]+">
+		<input name="secondNumber" ng-model="secondNumber" id="secondNumber" class="form-control" required placeholder="zero" pattern="[a-z\s]+">
 		<span ng-show="sumForm.firstNumber.$touched && sumForm.firstNumber.$invalid">Debes ingresar  un número.</span>
 		<div ng-if="number2_invalid">{{ number2_invalid }}</div>
   	</div>
