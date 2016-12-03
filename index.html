@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html ng-app="angular_sum">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>Suma2</title>
+		<link rel="stylesheet" href="resources/css/bootstrap.css">
+		<link rel="stylesheet" href="resources/css/main.css">
+		<script src="resources/js/jquery.js"></script>
+		<script src="resources/js/bootstrap.js"></script>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular.min.js"></script>
+	</head>
+	<body ng-controller="myCtrl" >
+	<div class="container-fluid header">
+	<header class=" panel-heading">
+		<h1>Suma en inglés</h1>
+		<p>Practica sumando números en ingles</p>
+	</header>
+	
+	</div>
+	
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid nav-container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Suma2</a>
+    
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Inicio</a></li>
+      
+      
+    </ul>
+  </div>
+  </div>
+</nav>
+
+	<div class="panel-body container-fluid">
+	<article class="suma col-md-4">
+		<h3>Instrucciones</h3>
+		<div class="text">
+			<ul class="list-group">
+				<li class="list-group-item list-group-item-warning">Debes ingresar dos números en la sección: "Suma dos números".<span class="badge">1</span></li>
+				<li class="list-group-item list-group-item-info">Luego debes hacer click en el botón sumar.<span class="badge">2</span></li>
+				<li class="list-group-item list-group-item-success">La página te mostrará el resultado y puedes comprobar si es igual al que tenías en tu mente.<span class="badge">3</span></li>
+			</ul>
+
+		</div>
+	</article>
+	<article class="suma col-md-4">
+		<h3>Suma dos números</h3>
+	<div class="text">
+	<form name="sumForm">
+	<div class="form-group">
+	    <label for="firstNumber">Número 1:</label>
+		<input name="firstNumber" ng-model="firstNumber" id="firstNumber" class="form-control" required autofocus="true" placeholder="zero" pattern="[a-z]+">
+		<span ng-show="sumForm.firstNumber.$touched && sumForm.firstNumber.$invalid">Debes ingresar  un número.</span>
+		<div ng-if="number1_invalid">{{ number1_invalid }}</div>
+  	</div>
+	<div class="form-group">
+	    <label for="secondNumber">Número 2:</label>
+		<input name="secondNumber" ng-model="secondNumber" id="secondNumber" class="form-control" required placeholder="zero" pattern="[a-z]+">
+		<span ng-show="sumForm.firstNumber.$touched && sumForm.firstNumber.$invalid">Debes ingresar  un número.</span>
+		<div ng-if="number2_invalid">{{ number2_invalid }}</div>
+  	</div>
+	
+	<button ng-click="sum()">Sumar</button>
+	</form>
+	<div class="result">La suma es: {{result}}</div>
+
+	</div>
+	</article>
+	<article class="suma col-md-4">
+		<h3>Últimas operaciones</h3>
+	<div class="text">
+		Puedes consultar las últimas 5 operaciones que has realizado.
+		<table class="table table-hover">
+		<thead>
+	      <tr>
+	        <th>Operación</th>
+	        <th>Resultado</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+			<tr ng-repeat="x in latest_ops">
+			    <td>{{ x.op }}</td>
+	    		<td>{{ x.res }}</td>
+			</tr>
+		</tbody>
+		</table>
+		<!--<div ng-repeat="x in latest_ops">
+    		 <span ng-bind="x"></span>
+		</div>-->
+	</div>
+	</article>
+	</div>
+
+	<footer class="footer panel-footer">
+		<div class="container-fluid">
+			<small>
+
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">@Copyleft 2016, Andrés Felipe Castellanos Páez</a>
+            </small>
+		</div>
+	</footer>
+	<script src="resources/js/converter.js"></script>
+	<script src="resources/js/myApp.js"></script>
+	<script src="resources/js/myCtrl.js"></script>
+	</body>
+</html>
