@@ -61,7 +61,7 @@
 	<div class="form-group">
 	    <label for="secondNumber">Número 2:</label>
 		<input name="secondNumber" ng-model="secondNumber" id="secondNumber" class="form-control" required placeholder="zero" pattern="[a-z\s]+">
-		<span ng-show="sumForm.firstNumber.$touched && sumForm.firstNumber.$invalid">Debes ingresar  un número.</span>
+		<span ng-show="sumForm.secondNumber.$touched && sumForm.secondNumber.$invalid">Debes ingresar  un número.</span>
 		<div ng-if="number2_invalid">{{ number2_invalid }}</div>
   	</div>
 	
